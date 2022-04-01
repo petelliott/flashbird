@@ -1,6 +1,7 @@
 
 
 export interface Recording {
+    id: string;
     gen: string;
     sp: string;
     ssp: string;
