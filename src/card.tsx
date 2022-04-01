@@ -16,7 +16,10 @@ const QuestionCard = (props: QuestionProps) => {
     return <div>
         <audio controls autoPlay loop src={props.recording.file}>stop using netscape navigator lol</audio>
         <br/>
-        <form onSubmit={() => props.onSubmit(ref.current?.value ?? '')}>
+        <form onSubmit={(e) => {
+            e.preventDefault();
+            props.onSubmit(ref.current?.value ?? '');
+        }}>
             <input type="text" placeholder="common name" ref={ref}/>
         </form>
     </div>;
@@ -47,7 +50,7 @@ const AnswerCard = (props: AnswerProps) => {
 export const Card = (props: CardProps) => {
     const [answer, setAnswer] = useState<string>();
 
-    if (answer) {
+    if (answer !== undefined) {
         const correct = answer.localeCompare(props.recording.en, undefined, { sensitivity: 'accent' }) === 0;
         return <AnswerCard
             recording={props.recording}
