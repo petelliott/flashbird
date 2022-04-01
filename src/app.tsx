@@ -24,6 +24,7 @@ export const App = () => {
             setRecordings(recordings);
             randomRec(recordings);
         })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     if (recordings && currentRec) {
