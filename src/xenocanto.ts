@@ -60,3 +60,7 @@ export const getRecordings = async (query: string): Promise<Recording[]> => {
     }
     return recordings;
 };
+
+export const birdFilter = (recordings: Recording[]) =>
+    recordings
+        .filter(r => r.also.length === 1 && r.also[0] === ''); // filter multi bird recordings

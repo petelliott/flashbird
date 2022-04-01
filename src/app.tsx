@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getRecordings, Recording } from './xenocanto';
+import { getRecordings, Recording, birdFilter } from './xenocanto';
 import { Card } from './card';
 import { randomChoice, useCounter } from './util'
 
@@ -21,8 +21,9 @@ export const App = () => {
     useEffect(() => {
         (async () => {
             const recordings = await getRecordings('cnt:canada');
-            setRecordings(recordings);
-            randomRec(recordings);
+            const filteredRecs = birdFilter(recordings);
+            setRecordings(filteredRecs);
+            randomRec(filteredRecs);
         })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
