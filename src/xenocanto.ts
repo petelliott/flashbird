@@ -44,21 +44,20 @@ interface RecordingResponse {
 const recordingUrl = (query: string, page?: number) =>
     `https://xeno-canto.org/api/2/recordings?query=${query}&page=${page ?? 1}`;
 
-export const getRecordings = async (query: string): Promise<Recording[]> => {
+export async function* getRecordings(query: string, filter?: (rs: Recording[]) => Recording[]): AsyncIterable<Recording[]> {
     let recordings: Recording[] = [];
     let numPages = Infinity;
 
     for (let page = 1; page <= numPages; ++page) {
         const response = await fetch(recordingUrl(query, page));
         if (!response.ok) {
-            console.log(response);
-            return [];
+            console.error(response);
         }
         const rr: RecordingResponse = await response.json();
         numPages = rr.numPages;
-        recordings = recordings.concat(rr.recordings);
+        recordings = recordings.concat((filter)? filter(rr.recordings) : rr.recordings);
+        yield recordings;
     }
-    return recordings;
 };
 
 export const birdFilter = (recordings: Recording[]) =>

@@ -20,10 +20,14 @@ export const App = () => {
 
     useEffect(() => {
         (async () => {
-            const recordings = await getRecordings('cnt:canada');
-            const filteredRecs = birdFilter(recordings);
-            setRecordings(filteredRecs);
-            randomRec(filteredRecs);
+            let one = false;
+            for await (const recordings of getRecordings('cnt:canada', birdFilter)) {
+                if (!one) {
+                    randomRec(recordings);
+                    one = true;
+                }
+                setRecordings(recordings);
+            }
         })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
