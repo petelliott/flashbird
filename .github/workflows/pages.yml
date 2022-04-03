@@ -1,4 +1,4 @@
-name: CI/CD
+name: gh-pages
 
 on:
   push:
