@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/flashbird/static/js/main.be7489f4.js",
+    "main.js": "/flashbird/static/js/main.c31a6d0a.js",
     "static/js/787.a2b4551e.chunk.js": "/flashbird/static/js/787.a2b4551e.chunk.js",
     "index.html": "/flashbird/index.html",
-    "main.be7489f4.js.map": "/flashbird/static/js/main.be7489f4.js.map",
+    "main.c31a6d0a.js.map": "/flashbird/static/js/main.c31a6d0a.js.map",
     "787.a2b4551e.chunk.js.map": "/flashbird/static/js/787.a2b4551e.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.be7489f4.js"
+    "static/js/main.c31a6d0a.js"
   ]
 }
