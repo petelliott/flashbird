@@ -62,4 +62,5 @@ export async function* getRecordings(query: string, filter?: (rs: Recording[]) =
 
 export const birdFilter = (recordings: Recording[]) =>
     recordings
-        .filter(r => r.also.length === 1 && r.also[0] === ''); // filter multi bird recordings
+        .filter(r => r.also.length === 1 && r.also[0] === '') // filter multi bird recordings
+        .filter(r => r.en !== 'Identity unknown'); // filter unknown birds

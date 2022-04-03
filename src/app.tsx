@@ -31,7 +31,7 @@ export const App = () => {
 
     // when we get recordings, maybe update our current recording
     useEffect(() => {
-        if (recordings && currentRec === undefined) {
+        if (recordings && recordings.length > 0 && currentRec === undefined) {
             randomRec();
         }
     // eslint-disable-next-line react-hooks/exhaustive-deps
