@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/flashbird/static/css/main.12740b42.css",
-    "main.js": "/flashbird/static/js/main.9fee8755.js",
+    "main.css": "/flashbird/static/css/main.a6aafbe8.css",
+    "main.js": "/flashbird/static/js/main.98945899.js",
     "static/js/787.a2b4551e.chunk.js": "/flashbird/static/js/787.a2b4551e.chunk.js",
     "index.html": "/flashbird/index.html",
-    "main.12740b42.css.map": "/flashbird/static/css/main.12740b42.css.map",
-    "main.9fee8755.js.map": "/flashbird/static/js/main.9fee8755.js.map",
+    "main.a6aafbe8.css.map": "/flashbird/static/css/main.a6aafbe8.css.map",
+    "main.98945899.js.map": "/flashbird/static/js/main.98945899.js.map",
     "787.a2b4551e.chunk.js.map": "/flashbird/static/js/787.a2b4551e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.12740b42.css",
-    "static/js/main.9fee8755.js"
+    "static/css/main.a6aafbe8.css",
+    "static/js/main.98945899.js"
   ]
 }
