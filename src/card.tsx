@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { Recording } from './xenocanto';
+import './card.css';
 
 export interface CardProps {
     recording: Recording;
@@ -13,14 +14,16 @@ interface QuestionProps {
 
 const QuestionCard = (props: QuestionProps) => {
     const ref = useRef<HTMLInputElement | null>(null);
-    return <div>
-        <audio controls autoPlay loop src={props.recording.file}>stop using netscape navigator lol</audio>
+    return <div className="card question">
+        <div className="audiobox">
+            <audio controls autoPlay loop src={props.recording.file}>stop using netscape navigator lol</audio>
+        </div>
         <br/>
         <form onSubmit={(e) => {
             e.preventDefault();
             props.onSubmit(ref.current?.value ?? '');
         }}>
-            <input type="text" placeholder="common name" ref={ref}/>
+            <input className="answerbox" type="text" placeholder="common name" ref={ref}/>
         </form>
     </div>;
 };
@@ -32,19 +35,16 @@ interface AnswerProps {
 }
 
 const AnswerCard = (props: AnswerProps) => {
-    const nextButton = <button onClick={props.onFinish}>next bird</button>;
-
-    if (props.correct) {
-        return <div>
-            <p>Correct!</p>
-            {nextButton}
-        </div>;
-    } else {
-        return <div>
-            <p>Incorrect. the correct answer was the {props.recording.en}</p>
-            {nextButton}
-        </div>;
-    }
+    return <div className="card answer">
+        {
+            (props.correct)?
+                <p className="correct">Correct ✔</p> :
+                <p className="incorrect">Incorrect ✘</p>
+        }
+        <p>{props.recording.en} ({props.recording.gen} {props.recording.sp})</p>
+        <p>recorded by {props.recording.rec} at {props.recording.loc}</p>
+        <button className="next" onClick={props.onFinish}>next bird</button>
+    </div>;
 };
 
 export const Card = (props: CardProps) => {

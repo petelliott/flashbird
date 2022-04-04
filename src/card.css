@@ -1,0 +1,52 @@
+.card {
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    padding: 10px;
+    width: 30em;
+    height: 15em;
+    box-shadow: 2px 2px 5px 0 grey;
+}
+
+.card.question {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card.question form {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.card.question .answerbox {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.card.question .audiobox {
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card.answer {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card.answer .next {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.card.answer .correct {
+    color: green;
+}
+
+.card.answer .incorrect {
+    color: red;
+}
