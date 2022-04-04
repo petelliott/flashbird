@@ -50,3 +50,15 @@
 .card.answer .incorrect {
     color: red;
 }
+
+.card.answer .infobox {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.card.answer .infotext {
+    margin-left:2em;
+}

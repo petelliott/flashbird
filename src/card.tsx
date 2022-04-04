@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { Recording } from './xenocanto';
+import { BirdThumb } from './wikipedia';
 import './card.css';
 
 export interface CardProps {
@@ -36,12 +37,17 @@ interface AnswerProps {
 
 const AnswerCard = (props: AnswerProps) => {
     return <div className="card answer">
-        {
-            (props.correct)?
-                <p className="correct">Correct ✔</p> :
-                <p className="incorrect">Incorrect ✘</p>
-        }
-        <p>{props.recording.en} ({props.recording.gen} {props.recording.sp})</p>
+        <div className="infobox">
+            <BirdThumb name={props.recording.en} width={150} />
+            <div className="infotext">
+                {
+                    (props.correct)?
+                        <p className="correct">Correct ✔</p> :
+                        <p className="incorrect">Incorrect ✘</p>
+                }
+                <p>{props.recording.en} ({props.recording.gen} {props.recording.sp})</p>
+            </div>
+        </div>
         <p>recorded by {props.recording.rec} at {props.recording.loc}</p>
         <button className="next" onClick={props.onFinish}>next bird</button>
     </div>;
